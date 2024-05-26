@@ -20,7 +20,7 @@ function CargoInfo({ cargo, onChange, index }) {
         <Typography variant="body2">Вага: {cargo.weight} кг</Typography>
       </div>
       <div style={{display: "flex", alignItems: "center", justifyContent: 'center', flexDirection:"column"}}>
-        <img src="Вантаж.png" alt="Container" style={{ width: '150px', height: 'auto' }} />
+        <img src="cargo-placement-react/Вантаж.png" alt="Container" style={{ width: '150px', height: 'auto' }} />
       </div>
       <div style={{display: "flex", alignItems: "center", justifyContent: 'center', flexDirection:"column"}}>
       <TextField
