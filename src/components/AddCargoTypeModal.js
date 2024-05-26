@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Box, TextField, Button, Typography } from '@mui/material';
-import{API_ROOT}from '../consts'
-import { useNavigate } from 'react-router-dom';
-function AddCargoTypeModal({ open, handleClose }) {
+
+function AddCargoTypeModal({ open, handleClose, refreshCargoTypes }) {
   const [newType, setNewType] = useState({
     name: '',
     length: '',
@@ -10,13 +9,13 @@ function AddCargoTypeModal({ open, handleClose }) {
     weight: '',
     color: '#000000'
   });
-  const navigate = useNavigate();
+
   const handleChange = (event) => {
     setNewType({ ...newType, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async () => {
-    const url = `${API_ROOT}/cargo_type/create`;
+    const url = 'http://localhost:8080/cargo_type/create';
     const payload = {
       name: newType.name,
       length: parseFloat(newType.length),
@@ -24,7 +23,7 @@ function AddCargoTypeModal({ open, handleClose }) {
       weight: parseFloat(newType.weight),
       hex_color: newType.color.replace('#', '')
     };
-  
+
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -33,20 +32,18 @@ function AddCargoTypeModal({ open, handleClose }) {
         },
         body: JSON.stringify(payload)
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
-      const status = await response.status;
-      console.log('Success:', status);
-      navigate('/manual-placement');
-      handleClose();
+
+      console.log('Success: New cargo type added');
+      handleClose(); // Close modal after successful addition
+      refreshCargoTypes(); // Refresh the list of cargo types
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  
 
   return (
     <Modal
@@ -59,50 +56,11 @@ function AddCargoTypeModal({ open, handleClose }) {
         <Typography variant="h6" component="h2">
           Додати новий вид вантажу
         </Typography>
-        <TextField
-          label="Назва"
-          variant="outlined"
-          name="name"
-          value={newType.name}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Довжина"
-          type="number"
-          variant="outlined"
-          name="length"
-          value={newType.length}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Ширина"
-          type="number"
-          variant="outlined"
-          name="width"
-          value={newType.width}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Вага"
-          type="number"
-          variant="outlined"
-          name="weight"
-          value={newType.weight}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          type="color"
-          variant="outlined"
-          name="color"
-          value={newType.color}
-          onChange={handleChange}
-          fullWidth
-          sx={{ height: 56 }} // Задаємо висоту поля для кольору, щоб воно відповідало іншим полям
-        />
+        <TextField label="Назва" variant="outlined" name="name" value={newType.name} onChange={handleChange} fullWidth />
+        <TextField label="Довжина" type="number" variant="outlined" name="length" value={newType.length} onChange={handleChange} fullWidth />
+        <TextField label="Ширина" type="number" variant="outlined" name="width" value={newType.width} onChange={handleChange} fullWidth />
+        <TextField label="Вага" type="number" variant="outlined" name="weight" value={newType.weight} onChange={handleChange} fullWidth />
+        <TextField type="color" variant="outlined" name="color" value={newType.color} onChange={handleChange} fullWidth sx={{ height: 56 }} />
         <Button onClick={handleSubmit} variant="contained" color="primary">Зберегти</Button>
       </Box>
     </Modal>

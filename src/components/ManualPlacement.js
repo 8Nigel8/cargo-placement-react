@@ -18,7 +18,7 @@ function ManualPlacement() {
   const scaleHeight = maxHeight / container.length;
   const scale = Math.min(scaleWidth, scaleHeight);
 
-  useEffect(() => {
+  const fetchCargoTypes = () => {
     fetch('https://cargo-placement.azurewebsites.net/cargo_type/get_all')
       .then(response => response.json())
       .then(data => setCargoTypes(data.map(type => ({
@@ -30,6 +30,10 @@ function ManualPlacement() {
         }
       }))))
       .catch(error => console.error('Error fetching cargo types:', error));
+  };
+
+  useEffect(() => {
+    fetchCargoTypes(); // Fetch on mount
   }, []);
 
   const savePlacement = () => {
@@ -84,7 +88,7 @@ function ManualPlacement() {
   return (
     <div>
       <Box sx={{ display: 'flex', height: 'calc(100vh - 120px)' }}>
-        <CargoTypePanel cargoTypes={cargoTypes} onAddCargo={addCargo} />
+        <CargoTypePanel cargoTypes={cargoTypes} onAddCargo={addCargo} refreshCargoTypes={fetchCargoTypes}/>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid gray', width: maxWidth, backgroundColor: "#cccccc" }}>
           <Box sx={{ width: `${container.width * scale}px`, height: `${container.length * scale}px`, position: 'relative', backgroundColor: "white" }}>
             {cargos.map(cargo => (

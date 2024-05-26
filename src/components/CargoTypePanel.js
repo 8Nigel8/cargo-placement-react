@@ -4,7 +4,7 @@ import { Box, Typography, Button, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import AddCargoTypeModal from './AddCargoTypeModal';
 
-const CargoTypePanel = ({ cargoTypes, onAddCargo, onAddType }) => {
+const CargoTypePanel = ({ cargoTypes, onAddCargo, refreshCargoTypes}) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -32,7 +32,7 @@ const CargoTypePanel = ({ cargoTypes, onAddCargo, onAddType }) => {
           <AddIcon />
         </IconButton>
       </Box>
-      <AddCargoTypeModal open={open} handleClose={handleClose} />
+      <AddCargoTypeModal open={open} handleClose={handleClose} refreshCargoTypes={refreshCargoTypes}/>
       {cargoTypes.map(type => (
         <Box key={type.id} sx={{ mb: 2, p: 1, border: '1px solid #ddd', borderColor: `rgba(${type.color.r}, ${type.color.g}, ${type.color.b}, 0.5)`, borderRadius: '4px' }}>
           <Typography variant="body1" color="text.primary">
