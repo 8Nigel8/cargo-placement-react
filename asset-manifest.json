@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cargo-placement-react/static/css/main.e6c13ad2.css",
+    "main.js": "/cargo-placement-react/static/js/main.9d0c5016.js",
+    "index.html": "/cargo-placement-react/index.html",
+    "main.e6c13ad2.css.map": "/cargo-placement-react/static/css/main.e6c13ad2.css.map",
+    "main.9d0c5016.js.map": "/cargo-placement-react/static/js/main.9d0c5016.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9d0c5016.js"
+  ]
+}
