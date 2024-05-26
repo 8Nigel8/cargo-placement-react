@@ -10,7 +10,7 @@ function EditContainer() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/container/${id}`)
+        fetch(`https://cargo-placement.azurewebsites.net/container/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (!data || !data.cargos) {

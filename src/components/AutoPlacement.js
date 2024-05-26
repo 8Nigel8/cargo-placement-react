@@ -47,7 +47,7 @@ function AutoPlacement() {
       
     };
     console.log(JSON.stringify(payload))
-    fetch('http://localhost:8080/container/auto_placement', {
+    fetch('https://cargo-placement.azurewebsites.net/container/auto_placement', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

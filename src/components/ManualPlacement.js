@@ -19,7 +19,7 @@ function ManualPlacement() {
   const scale = Math.min(scaleWidth, scaleHeight);
 
   useEffect(() => {
-    fetch('http://localhost:8080/cargo_type/get_all')
+    fetch('https://cargo-placement.azurewebsites.net/cargo_type/get_all')
       .then(response => response.json())
       .then(data => setCargoTypes(data.map(type => ({
         ...type,
@@ -47,7 +47,7 @@ function ManualPlacement() {
       }))
     };
 
-    fetch('http://localhost:8080/container/create', {
+    fetch('https://cargo-placement.azurewebsites.net/container/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

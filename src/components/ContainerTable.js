@@ -9,7 +9,7 @@ function ContainerTable() {
       setContainers(containers.filter(container => container.id !== id));
     };
     useEffect(() => {
-        fetch('http://localhost:8080/container/get_all')
+        fetch('https://cargo-placement.azurewebsites.net/container/get_all')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
