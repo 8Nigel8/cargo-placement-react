@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cargo-placement-react/static/css/main.e6c13ad2.css",
-    "main.js": "/cargo-placement-react/static/js/main.52ec00c5.js",
+    "main.js": "/cargo-placement-react/static/js/main.e50c5ea2.js",
     "index.html": "/cargo-placement-react/index.html",
     "main.e6c13ad2.css.map": "/cargo-placement-react/static/css/main.e6c13ad2.css.map",
-    "main.52ec00c5.js.map": "/cargo-placement-react/static/js/main.52ec00c5.js.map"
+    "main.e50c5ea2.js.map": "/cargo-placement-react/static/js/main.e50c5ea2.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.52ec00c5.js"
+    "static/js/main.e50c5ea2.js"
   ]
 }
