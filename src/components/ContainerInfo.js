@@ -38,7 +38,7 @@ function ContainerInfo({ container, N, onContainerDelete }) {
                 <p><strong>Розмір:</strong> {container.width} см x {container.length} см</p>
             </div>
             <div>
-                <img src="Контейнер.png" alt="Container" style={{ width: '100%', height: 'auto' }} />
+                <img src={process.env.PUBLIC_URL+"/Контейнер.png"} alt="Container" style={{ width: '100%', height: 'auto' }} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <Button onClick={handleDelete} color="error" startIcon={<DeleteIcon />} style={{ marginLeft: "auto" }}>
