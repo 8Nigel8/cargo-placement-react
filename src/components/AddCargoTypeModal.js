@@ -57,9 +57,9 @@ function AddCargoTypeModal({ open, handleClose, refreshCargoTypes }) {
           Додати новий вид вантажу
         </Typography>
         <TextField label="Назва" variant="outlined" name="name" value={newType.name} onChange={handleChange} fullWidth />
-        <TextField label="Довжина" type="number" variant="outlined" name="length" value={newType.length} onChange={handleChange} fullWidth />
-        <TextField label="Ширина" type="number" variant="outlined" name="width" value={newType.width} onChange={handleChange} fullWidth />
-        <TextField label="Вага" type="number" variant="outlined" name="weight" value={newType.weight} onChange={handleChange} fullWidth />
+        <TextField label="Довжина(см)" type="number" variant="outlined" name="length" value={newType.length} onChange={handleChange} fullWidth />
+        <TextField label="Ширина(см)" type="number" variant="outlined" name="width" value={newType.width} onChange={handleChange} fullWidth />
+        <TextField label="Вага(кг)" type="number" variant="outlined" name="weight" value={newType.weight} onChange={handleChange} fullWidth />
         <TextField type="color" variant="outlined" name="color" value={newType.color} onChange={handleChange} fullWidth sx={{ height: 56 }} />
         <Button onClick={handleSubmit} variant="contained" color="primary">Зберегти</Button>
       </Box>

@@ -75,7 +75,7 @@ function CreateContainer() {
           name="maxWeight"
           value={container.maxWeight}
           onChange={handleChange}
-          label="Максимальна вага"
+          label="Максимальна вага(кг)"
           variant="outlined"
           required
           fullWidth
@@ -86,7 +86,7 @@ function CreateContainer() {
           name="width"
           value={container.width}
           onChange={handleChange}
-          label="Ширина"
+          label="Ширина(см)"
           variant="outlined"
           required
           fullWidth
@@ -97,7 +97,7 @@ function CreateContainer() {
           name="length"
           value={container.length}
           onChange={handleChange}
-          label="Довжина"
+          label="Довжина(см)"
           variant="outlined"
           required
           fullWidth
