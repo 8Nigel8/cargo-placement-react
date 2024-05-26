@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Box, TextField, Button, Typography } from '@mui/material';
 import{API_ROOT}from '../consts'
-
+import { useNavigate } from 'react-router-dom';
 function AddCargoTypeModal({ open, handleClose }) {
   const [newType, setNewType] = useState({
     name: '',
@@ -10,7 +10,7 @@ function AddCargoTypeModal({ open, handleClose }) {
     weight: '',
     color: '#000000'
   });
-
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setNewType({ ...newType, [event.target.name]: event.target.value });
   };
@@ -40,6 +40,7 @@ function AddCargoTypeModal({ open, handleClose }) {
   
       const status = await response.status;
       console.log('Success:', status);
+      navigate('/manual-placement');
       handleClose();
     } catch (error) {
       console.error('Error:', error);
