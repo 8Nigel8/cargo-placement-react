@@ -7,6 +7,7 @@ function AutoPlacement() {
   const location = useLocation();
   const container = location.state.container; // Retrieve container details passed via state
 
+  
   const [cargoTypes, setCargoTypes] = useState([]); // Stores cargo types without user inputs
   const [cargoSelections, setCargoSelections] = useState([]); // Stores user inputs
   const navigate = useNavigate();
