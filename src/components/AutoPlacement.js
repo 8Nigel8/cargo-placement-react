@@ -11,7 +11,7 @@ function AutoPlacement() {
   const [cargoSelections, setCargoSelections] = useState([]); // Stores user inputs
   const navigate = useNavigate();
   useEffect(() => {
-    fetch('http://localhost:8080/cargo_type/get_all')
+    fetch('https://cargo-placement.azurewebsites.net/cargo_type/get_all')
       .then(response => response.json())
       .then(data => {
         const typesWithColors = data.map(type => ({
