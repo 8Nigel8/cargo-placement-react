@@ -16,8 +16,8 @@ function App() {
   return (
     <Router>
       <AppBar position="fixed" sx={{
-        backgroundColor: '#feb043', // сірий колір фону
-        color: '#ffffff' // оранжевий колір тексту
+        backgroundColor: '#feb043',
+        color: '#ffffff'
       }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -28,7 +28,6 @@ function App() {
           <Button color="inherit" component={Link} to="/settings">Налаштування</Button>
         </Toolbar>
       </AppBar>
-      {/* Додавання відступу зверху для компенсації висоти AppBar */}
       <Container sx={{ marginTop: 8 }}>
         <Routes>
           <Route path="/" element={<Dashboard />} />

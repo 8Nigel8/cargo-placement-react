@@ -12,7 +12,7 @@ function ContainerInfo({ container, N, onContainerDelete }) {
 
     const handleDelete = (e) => {
         e.stopPropagation();
-        fetch(`https://cargo-placement.azurewebsites.net/container/${container.id}`, {
+        fetch(`http://localhost:8080/container/${container.id}`, {
             method: 'PUT'
         })
         .then(response => {

@@ -1,1 +1,1 @@
-export const API_ROOT = "https://cargo-placement.azurewebsites.net/"
+export const API_ROOT = "http://localhost:8080/"

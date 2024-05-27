@@ -15,7 +15,7 @@ function AddCargoTypeModal({ open, handleClose, refreshCargoTypes }) {
   };
 
   const handleSubmit = async () => {
-    const url = 'https://cargo-placement.azurewebsites.net/cargo_type/create';
+    const url = 'http://localhost:8080/cargo_type/create';
     const payload = {
       name: newType.name,
       length: parseFloat(newType.length),
